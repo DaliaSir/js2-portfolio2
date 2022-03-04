@@ -9,10 +9,10 @@ export function createLoginLink() {
   let loginLink = `<a class="nav-link  ${pathname === "/login.html" ? "active" : ""}" href="login.html">Login</a>`;
 
   if (username) {
-    const isActive = pathname === "/add.html" || pathname === "/edit.html";
+    const isActive = pathname === "/add.html" || pathname === "/edit.html" || pathname === "/admin.html" || pathname === "/edit-articles.html";
 
-    loginLink = ` <a class="nav-link admin-nav-link ${isActive ? "active" : ""}" href="admin.html" >Welcome <br />${username}</a>
-					        <button id="logout" type="button" class="btn nav-link text-uppercase">Logout</button>
+    loginLink = `<a class="nav-link admin-nav-link ${isActive ? "active" : ""}" href="admin.html" >Welcome <br />${username}</a>
+					      <button id="logout" type="button" class="btn nav-link text-uppercase">Logout</button>
 		`;
   }
   loginLinkContainer.innerHTML = `${loginLink}`;
