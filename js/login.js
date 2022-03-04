@@ -48,7 +48,6 @@ async function successfulLogin(username, password) {
     try {
         const response = await fetch(loginUrl, options);
         const json = await response.json();
-        s
         if (json.user) {
             saveToken(json.jwt);
             saveUser(json.user);

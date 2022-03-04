@@ -80,7 +80,7 @@ h1,
 h2 {
   text-align: center;
   color: var(--background-colour);
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 h2 {
@@ -99,6 +99,70 @@ h2 {
 
 .row {
   margin: 0 auto;
+}
+
+/*-------ADMIN DASHBOARD--------*/
+
+.admin-links-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  align-items: center;
+}
+
+.admin-link {
+  padding: 15px 20px;
+  border: 1px solid var(--background-colour);
+  background-color: var(--background-colour);
+  color: var(--text-color);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  max-width: 200px;
+
+  transition: background 0.4s;
+}
+.admin a:active {
+  position: relative;
+  top: 1px;
+}
+
+/*-------------EDIT ARTICLES------------*/
+
+.edit-articles-container {
+  margin-top: 60px;
+}
+
+.edit-articles-card {
+  position: relative;
+}
+
+.card__hover-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0px;
+  top: 0px;
+  background: rgba(177, 149, 118, 0.92);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.card__hover-container-text {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
 }
 
 /*----SEARCH FORM----*/
@@ -138,9 +202,13 @@ h2 {
   color: var(--text-color);
 }
 
-.card-body a:hover {
-  background: transparent;
-  color: rgba(27, 22, 17, 0.6);
+.card-body a:hover .card__hover-container {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-body a:active .card__hover-container-text {
+  text-decoration: underline;
 }
 
 .card-footer {
@@ -157,6 +225,7 @@ h2 {
 .card i:hover {
   position: relative;
   top: 1px;
+  color: #d32203;
 }
 
 /*----BUTTONS----*/
@@ -300,7 +369,7 @@ h2 {
     padding-top: 25px;
   }
 
-  a.nav-link.admin-link {
+  a.nav-link.admin-nav-link {
     padding-top: 15px;
   }
 
@@ -312,5 +381,14 @@ h2 {
   .loginLink span {
     margin-right: 0;
     margin-left: 20px;
+  }
+
+  .admin-links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .admin-link-add {
+    margin-right: 40px;
   }
 }
