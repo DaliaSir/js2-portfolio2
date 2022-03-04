@@ -14,8 +14,7 @@ body {
   height: 100vh;
 }
 
-/*----NAV-----*/
-
+/*-------------------NAV--------------------*/
 .nav {
   text-transform: uppercase;
   justify-content: flex-start;
@@ -96,8 +95,7 @@ li.breadcrumb-item.active {
   font-weight: 300;
 }
 
-/*----TYPO-----*/
-
+/*-----------------------TYPO---------------------*/
 h1,
 h2 {
   text-align: center;
@@ -111,8 +109,7 @@ h2 {
   font-size: 3rem;
 }
 
-/*----CONTAINER-----*/
-
+/*--------------------CONTAINER---------------------*/
 .container {
   max-width: 1024px;
   margin: 20px auto;
@@ -123,8 +120,7 @@ h2 {
   margin: 0 auto;
 }
 
-/*-------ADMIN DASHBOARD--------*/
-
+/*-----------------ADMIN DASHBOARD-------------------*/
 .admin-links-container {
   display: flex;
   flex-direction: column;
@@ -161,8 +157,7 @@ h2 {
   box-shadow: 6px 6px var(--border-colour);
 }
 
-/*-------------EDIT ARTICLES------------*/
-
+/*-------------------EDIT ARTICLES------------------*/
 .edit-articles-container {
   margin-top: 60px;
 }
@@ -194,14 +189,12 @@ h2 {
   text-align: center;
 }
 
-/*----EDIT----*/
-
+/*-------------------------EDIT------------------------*/
 .edit-form {
   display: none;
 }
 
-/*----SEARCH FORM----*/
-
+/*---------------------SEARCH FORM---------------------*/
 .search-form {
   max-width: 262px;
   margin: 10px 0 10px 16px;
@@ -218,8 +211,7 @@ h2 {
   border-color: var(--primary-colour);
 }
 
-/*----CARD----*/
-
+/*------------------------CARD--------------------------*/
 .card {
   height: 100%;
   background-color: var(--background-colour);
@@ -269,8 +261,7 @@ h2 {
   cursor: inherit;
 }
 
-/*----BUTTONS----*/
-
+/*-----------------------BUTTONS----------------------------*/
 .clearButton-container,
 .addButton-container,
 .editButton-container,
@@ -334,7 +325,7 @@ h2 {
   color: #ffffff;
 }
 
-/*---------LOGIN-----------*/
+/*---------------------------LOGIN-----------------------------*/
 .login-form {
   text-align: center;
 }
@@ -358,8 +349,7 @@ h2 {
   border: 2px solid var(--border-colour);
 }
 
-/*----MESSAGE-----*/
-
+/*------------------------MESSAGE------------------------------*/
 .message {
   border: 4px solid var(--border-colour);
   background-color: #ffffff;
@@ -395,15 +385,14 @@ h2 {
   width: 100%;
   margin: 0;
 }
-/*----LOADER-----*/
-
+/*----------------------LOADER-----------------------*/
 .loader {
   border: 16px solid #ffffff;
   border-top: 16px solid var(--primary-colour);
   border-radius: 50%;
   width: 120px;
   height: 120px;
-  margin-left: 50%;
+  margin-left: 35%;
   animation: spin 2s linear infinite;
 }
 
@@ -416,36 +405,29 @@ h2 {
   }
 }
 
-/*------MEDIA-----*/
-
+/*--------------------------MEDIA-------------------------*/
 @media only screen and (min-width: 600px) {
   .search-form,
   .clearButton {
     max-width: 300px;
   }
-
   .nav-link {
     height: 80px;
   }
-
   .nav a {
     padding-top: 25px;
   }
-
   a.nav-link.admin-nav-link {
     padding-top: 15px;
   }
-
   .loginLink {
     display: flex;
     flex-direction: row;
   }
-
   .loginLink span {
     margin-right: 0;
     margin-left: 20px;
   }
-
   .admin-links-container {
     display: flex;
     flex-direction: row;
@@ -453,5 +435,8 @@ h2 {
   }
   .admin-link-add {
     margin-right: 40px;
+  }
+  .loader {
+    margin-left: 45%;
   }
 }
