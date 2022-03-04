@@ -8,19 +8,19 @@ import { clearList } from "./utils/clearFavourites.js";
 createLoginLink();
 
 (function renderFavs() {
-    articlesContainer.innerHTML = "";
+  articlesContainer.innerHTML = "";
 
-    clearAllButton.addEventListener("click", () => clearList(renderFavs));
+  clearAllButton.addEventListener("click", () => clearList(renderFavs));
 
-    const favArticles = getFromStorage("favourite-articles");
+  const favArticles = getFromStorage("favourite-articles");
 
-    if (favArticles.length === 0) {
-        displayMessage("", noFavs, ".articles-container");
-        clearAllButton.style.display = 'none';
-    } else {
-        favArticles.forEach((article) => {
-            articlesContainer.innerHTML += `
-                <div class="col p-3">
+  if (favArticles.length === 0) {
+    displayMessage("noFavs-message", noFavs, ".articles-container");
+    clearAllButton.style.display = 'none';
+  } else {
+    favArticles.forEach((article) => {
+      articlesContainer.innerHTML += `
+                <div class="col p-3 fav-article">
                     <div class="card">
                         <div class="card-body article">
                             <h5 class="card-title">${article.title}</h5>
@@ -31,6 +31,6 @@ createLoginLink();
                     </div>
                 </div>
                 `;
-        });
-    }
+    });
+  }
 })();

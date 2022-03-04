@@ -25,39 +25,49 @@
         </nav>
     </header>
     <main>
-        <h1>Edit an Article</h1>
+        <div class="container edit-article-container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="admin.html">Admin</a></li>
+                    <li class="breadcrumb-item"><a href="edit-articles.html">Edit Articles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"></li>
+                </ol>
+            </nav>
+            <h1>Edit an Article</h1>
 
-        <div class="loader"></div>
+            <div class="loader"></div>
 
-        <div class="container">
-            <form class="mt-4 edit-form">
+            <div class="container">
+                <form class="mt-4 edit-form">
 
-                <div class="input-group-container">
-                    <div class="form-message"></div>
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
-                        <input id="title" class="form-control" type="text" autofocus placeholder="Article title" />
+                    <div class="input-group-container">
+                        <div class="form-message"></div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title</label>
+                            <input id="title" class="form-control" type="text" autofocus placeholder="Article title" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="summary" class="form-label">Summary</label>
+                            <textarea id="summary" class="form-control" rows="5" type="text"
+                                placeholder="Article summary"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="author" class="form-label">Author</label>
+                            <input id="author" class="form-control" type="text" autofocus
+                                placeholder="Article author" />
+                        </div>
+                        <input id="id" type="hidden" />
                     </div>
-                    <div class="mb-3">
-                        <label for="summary" class="form-label">Summary</label>
-                        <textarea id="summary" class="form-control" rows="3" type="text"
-                            placeholder="Article summary"></textarea>
+                    <div class="editButton-container">
+                        <button type="submit" id="update" class="btn editButton">Update</button>
                     </div>
-                    <div class="mb-3">
-                        <label for="author" class="form-label">Author</label>
-                        <input id="author" class="form-control" type="text" autofocus placeholder="Article author" />
+                    <div class="deleteButton-container">
+                        <button type="button" id="delete" class="btn deleteButton">Delete</button>
                     </div>
-                    <input id="id" type="hidden" />
-                </div>
-                <div class="editButton-container">
-                    <button type="submit" id="update" class="btn editButton">Update</button>
-                </div>
-                <div class="deleteButton-container">
-                    <button type="button" id="delete" class="btn deleteButton">Delete</button>
-                </div>
 
 
-        </div>
+            </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
         integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"

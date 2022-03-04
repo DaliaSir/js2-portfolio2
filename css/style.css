@@ -42,9 +42,13 @@ a:hover {
   top: 1px;
 }
 
-.active {
+.nav-link.active {
   background-color: var(--primary-colour);
   color: var(--text-color);
+}
+
+.nav-link.active:hover {
+  background-color: rgba(229, 227, 56, 0.6);
 }
 
 .loginLink {
@@ -72,6 +76,24 @@ a:hover {
 .loginLink button:hover {
   background-color: rgba(229, 227, 56, 0.6);
   color: #ffffff;
+}
+
+.breadcrumb {
+  padding: 20px 0;
+  font-size: 1.1rem;
+}
+.breadcrumb a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--background-colour);
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+li.breadcrumb-item.active {
+  background-color: none;
+  color: var(--background-colour);
+  font-weight: 300;
 }
 
 /*----TYPO-----*/
@@ -113,10 +135,15 @@ h2 {
   align-items: center;
 }
 
+.admin-link a {
+  color: var(--text-color);
+}
+
 .admin-link {
   padding: 15px 20px;
-  border: 1px solid var(--background-colour);
+  border: 4px var(--text-color) double;
   background-color: var(--background-colour);
+  box-shadow: 4px 4px var(--border-colour);
   color: var(--text-color);
   font-weight: 600;
   letter-spacing: 0.1rem;
@@ -124,12 +151,14 @@ h2 {
   text-transform: uppercase;
   margin-bottom: 30px;
   max-width: 200px;
-
-  transition: background 0.4s;
+  transition: top 0.4s, box-shadow 0.2s;
 }
-.admin a:active {
+.admin-link:hover {
   position: relative;
   top: 1px;
+}
+.admin-link:active {
+  box-shadow: 6px 6px var(--border-colour);
 }
 
 /*-------------EDIT ARTICLES------------*/
@@ -234,6 +263,12 @@ h2 {
   color: #d32203;
 }
 
+.fav-article i.fa.fa-heart:hover {
+  top: 0px;
+  color: var(--secondary-colour);
+  cursor: inherit;
+}
+
 /*----BUTTONS----*/
 
 .clearButton-container,
@@ -248,11 +283,12 @@ h2 {
 .addButton,
 .editButton {
   min-width: 262px;
-  margin-top: 20px;
+  margin: 20px 0;
   background-color: var(--primary-colour);
   color: var(--text-color);
   border: 2px solid var(--background-colour);
   border-radius: 0;
+  font-size: 1.125rem;
   font-weight: 600;
   transition: background 0.4s;
 }
@@ -264,6 +300,7 @@ h2 {
   color: var(--background-colour);
   border: 2px solid var(--background-colour);
   border-radius: 0;
+  font-size: 1.125rem;
   transition: background 0.4s;
 }
 
@@ -302,17 +339,19 @@ h2 {
   text-align: center;
 }
 
-.login-form .form-label {
+.login-form .form-label,
+.form-label {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
 .input-group-container {
   background-color: rgba(248, 238, 231, 0.7);
-  padding: 50px 25px;
+  padding: 40px 25px;
   border-radius: 2px;
+  max-width: 700px;
   text-align: left;
-  margin: 8% auto 3% auto;
+  margin: 5% auto 3% auto;
 }
 
 .form-control {
@@ -327,7 +366,6 @@ h2 {
   font-weight: 600;
   padding: 10px 0;
   margin: 20px 16px;
-  width: 100%;
   text-align: center;
   font-size: 1.2rem;
   box-shadow: 0 5px 5px 5px rgba(27, 22, 17, 0.3);
@@ -350,6 +388,11 @@ h2 {
 .message.success {
   border-color: #497830;
   color: #497830;
+}
+
+.noResult-message,
+.noFavs-message {
+  width: 100%;
 }
 /*----LOADER-----*/
 

@@ -3,8 +3,8 @@ export const noFavs = `
 `;
 
 export const noResults = `
-<p>No Articles Found by this author</p>
-<p>Please try again</p>
+  <p>No Articles Found by this author</p>
+  <p>Please try again</p>
 `;
 
 export const noUsername = "Please enter your username";
@@ -14,9 +14,9 @@ export const badLoginDetails = `
 <p>Please try again</p>
 `;
 
-export const noTitle = "Please add the title";
-export const noSummary = "Please add the summary";
-export const noAuthor = "Please add the author";
+export const noTitle = "Title is required";
+export const noSummary = "Summary is required";
+export const noAuthor = "Author is required";
 
 export const addedArticle = `
 <p>Congratulation!</p>
@@ -25,5 +25,5 @@ export const addedArticle = `
 
 export const updatedArticle = `
 <p>Congratulation!</p>
-<p>Product is updated.</p>
+<p>Article is updated.</p>
 `;

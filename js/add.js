@@ -8,6 +8,7 @@ import { getToken } from "./utils/saveUser.js";
 createLoginLink();
 
 const addForm = document.querySelector(".add-form");
+const addButton = document.querySelector(".addButton");
 const title = document.querySelector("#title");
 const summary = document.querySelector("#summary");
 const author = document.querySelector("#author");
@@ -51,21 +52,26 @@ async function addArticle(title, summary, author) {
     };
 
     try {
+        addButton.innerHTML = "Adding...";
         const response = await fetch(url, options);
         const json = await response.json();
 
         if (json.created_at) {
             displayMessage("success", addedArticle, formMessageContainer);
+            addButton.innerHTML = "Add";
+            window.scrollTo(top);
             addForm.reset();
         }
 
         if (json.error) {
             displayMessage("error", json.message, formMessageContainer);
+            window.scrollTo(top);
         }
 
     } catch (error) {
         console.log(error);
         displayMessage("error", error, formMessageContainer);
+        window.scrollTo(top);
     }
 
 }

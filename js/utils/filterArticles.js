@@ -16,7 +16,7 @@ export function filterArticles(articles) {
         renderArticles(filteredValues);
 
         if (filteredValues.length === 0) {
-            displayMessage("", noResults, ".articles-container");
+            displayMessage("noResult-message", noResults, ".articles-container");
         }
     }
 

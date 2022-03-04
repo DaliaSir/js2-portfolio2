@@ -19,6 +19,7 @@ if (!id) {
 const articleUrl = baseUrl + "articles/" + id;
 
 const editForm = document.querySelector(".edit-form");
+const editButton = document.querySelector(".editButton");
 const title = document.querySelector("#title");
 const summary = document.querySelector("#summary");
 const author = document.querySelector("#author");
@@ -30,6 +31,9 @@ const loader = document.querySelector(".loader");
     try {
         const response = await fetch(articleUrl);
         const json = await response.json();
+
+        const breadcrumbName = document.querySelector(".breadcrumb-item.active");
+        breadcrumbName.innerHTML = `${json.title}`;
 
         title.value = json.title;
         summary.value = json.summary;
@@ -84,19 +88,24 @@ async function editArticle(title, summary, author, id) {
     };
 
     try {
+        editButton.innerHTML = "Updating...";
         const response = await fetch(url, options);
         const json = await response.json();
 
         if (json.updated_at) {
             displayMessage("success", updatedArticle, formMessageContainer);
+            editButton.innerHTML = "Update";
+            window.scrollTo(top);
         }
 
         if (json.error) {
             displayMessage("error", json.message, formMessageContainer);
+            window.scrollTo(top);
         }
 
     } catch (error) {
         console.log(error);
         displayMessage("error", error, formMessageContainer);
+        window.scrollTo(top);
     }
 }
