@@ -6,6 +6,7 @@ import { saveToken, saveUser } from "./utils/saveUser.js";
 import { createLoginLink } from "./utils/dynamicLoginMenu.js";
 
 const loginForm = document.querySelector(".login-form");
+const loginButton = document.querySelector(".submitButton");
 const username = document.querySelector("#username");
 const password = document.querySelector("#password");
 const formMessage = document.querySelector(".form-message");
@@ -38,6 +39,7 @@ async function successfulLogin(username, password) {
     },
   };
   try {
+    loginButton.innerHTML = "Logging in...";
     const response = await fetch(loginUrl, options);
     const json = await response.json();
     if (json.user) {

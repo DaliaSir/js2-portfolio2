@@ -393,6 +393,7 @@ h2 {
 .noResult-message,
 .noFavs-message {
   width: 100%;
+  margin: 0;
 }
 /*----LOADER-----*/
 

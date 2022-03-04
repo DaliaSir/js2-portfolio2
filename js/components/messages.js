@@ -1,9 +1,9 @@
 export const noFavs = `
-<p>No Favourites yet</p>
+<p>No favourites yet</p>
 `;
 
 export const noResults = `
-  <p>No Articles Found by this author</p>
+  <p>No articles found by this author</p>
   <p>Please try again</p>
 `;
 
