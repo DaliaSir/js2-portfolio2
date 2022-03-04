@@ -8,16 +8,16 @@ const url = baseUrl + "articles/";
 
 createLoginLink();
 
-(async function () {
-    try {
-        const response = await fetch(url);
-        const articles = await response.json();
+(async () => {
+  try {
+    const response = await fetch(url);
+    const articles = await response.json();
 
-        renderArticles(articles);
-        filterArticles(articles);
+    renderArticles(articles);
+    filterArticles(articles);
 
-    } catch (error) {
-        console.log(error);
-        displayMessage("error", error, ".articles-container");
-    }
+  } catch (error) {
+    console.log(error);
+    displayMessage("error", error, ".articles-container");
+  }
 })();

@@ -4,22 +4,20 @@ import { displayMessage } from "./displayMessage.js";
 import { noResults } from "../components/messages.js";
 
 export function filterArticles(articles) {
-    search.onkeyup = (event) => {
-        const searchValue = event.target.value.replace(/\s/g, "").toLowerCase();
+  search.onkeyup = (event) => {
+    const searchValue = event.target.value.replace(/\s/g, "").toLowerCase();
 
-        const filteredValues = articles.filter((article) => {
-            if (article.author.replace(/\s/g, "").toLowerCase().includes(searchValue)) {
-                return true;
-            }
-        });
+    const filteredValues = articles.filter((article) => {
+      if (article.author.replace(/\s/g, "").toLowerCase().includes(searchValue)) {
+        return true;
+      }
+    });
+    renderArticles(filteredValues);
 
-        renderArticles(filteredValues);
-
-        if (filteredValues.length === 0) {
-            displayMessage("noResult-message", noResults, ".articles-container");
-        }
+    if (filteredValues.length === 0) {
+      displayMessage("noResult-message", noResults, ".articles-container");
     }
-
-    renderArticles(articles);
+  }
+  renderArticles(articles);
 }
 

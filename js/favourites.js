@@ -11,7 +11,6 @@ createLoginLink();
   articlesContainer.innerHTML = "";
 
   clearAllButton.addEventListener("click", () => clearList(renderFavs));
-
   const favArticles = getFromStorage("favourite-articles");
 
   if (favArticles.length === 0) {
@@ -20,17 +19,17 @@ createLoginLink();
   } else {
     favArticles.forEach((article) => {
       articlesContainer.innerHTML += `
-                <div class="col p-3 fav-article">
-                    <div class="card">
-                        <div class="card-body article">
-                            <h5 class="card-title">${article.title}</h5>
-                            <p class="card-text">${article.summary}</p>
-                            <p class="card-footer bg-transparent fst-italic m-0">${article.author}</p>
-                            <i class="fa fa-heart"></i>
-                        </div>
-                    </div>
+        <div class="col p-3 fav-article">
+            <div class="card">
+                <div class="card-body article">
+                    <h5 class="card-title">${article.title}</h5>
+                    <p class="card-text">${article.summary}</p>
+                    <p class="card-footer bg-transparent fst-italic m-0">${article.author}</p>
+                    <i class="fa fa-heart"></i>
                 </div>
-                `;
+            </div>
+        </div>
+        `;
     });
   }
 })();

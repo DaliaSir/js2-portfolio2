@@ -8,7 +8,6 @@ export default function deleteButton(id) {
 
   deleteBtn.onclick = async () => {
     const deleteArticle = confirm("Delete this article?");
-
     if (deleteArticle) {
       const url = baseUrl + "articles/" + id;
       const token = getToken();
@@ -22,7 +21,6 @@ export default function deleteButton(id) {
         const response = await fetch(url, options);
         const json = await response.json();
         location.href = "/edit-articles.html";
-
       } catch (error) {
         console.log(error);
         displayMessage("error", error, formMessageContainer);
