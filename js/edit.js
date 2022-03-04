@@ -2,7 +2,7 @@ import { createLoginLink } from "./utils/dynamicLoginMenu.js";
 import { baseUrl } from "./components/baseUrl.js";
 import { formMessageContainer } from "./components/elements.js";
 import { displayMessage } from "./utils/displayMessage.js";
-import { noTitle, noSummary, noAuthor, updetedArticle } from "./components/messages.js";
+import { noTitle, noSummary, noAuthor, updatedArticle } from "./components/messages.js";
 import { getToken } from "./utils/saveUser.js";
 
 createLoginLink();
@@ -85,7 +85,7 @@ async function editArticle(title, summary, author, id) {
         const json = await response.json();
 
         if (json.updated_at) {
-            displayMessage("success", updetedArticle, formMessageContainer);
+            displayMessage("success", updatedArticle, formMessageContainer);
         }
 
         if (json.error) {

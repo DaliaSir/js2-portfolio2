@@ -5,17 +5,16 @@ export function createLoginLink() {
     const loginLinkContainer = document.querySelector(".loginLink");
 
     const { pathname } = document.location;
-    //console.log(pathname);
 
     const username = getUsername();
 
     let loginLink = `<a class="nav-link  ${pathname === "/login.html" ? "active" : ""}" href="login.html">Login</a>`;
 
     if (username) {
-        loginLink = ` <span class="nav-link ">Welcome <br />
-                      ${username}</span>
+        const isActive = pathname === "/add.html" || pathname === "/edit.html";
+        loginLink = ` <a class="nav-link admin-link ${isActive ? "active" : ""}" href="admin.html" >Welcome <br />
+                      ${username}</a>
                       <button id="logout" type="button" class="btn nav-link text-uppercase">Logout</button>
-                      <a class="nav-link  ${pathname === "/add.html" ? "active" : ""}" href="add.html">Add Article</a>
                       `;
     }
 

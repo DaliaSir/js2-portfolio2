@@ -23,7 +23,7 @@ export const addedArticle = `
 <p>You have added an article.</p>
 `;
 
-export const updetedArticle = `
+export const updatedArticle = `
 <p>Congratulation!</p>
 <p>Product is updated.</p>
 `;

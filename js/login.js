@@ -28,10 +28,10 @@ loginForm.addEventListener("submit", e => {
         return displayMessage("warning", noPassword, formMessageContainer);
     }
 
-    successfullLogin(usernameValue, passwordValue);
+    successfulLogin(usernameValue, passwordValue);
 });
 
-async function successfullLogin(username, password) {
+async function successfulLogin(username, password) {
 
     const loginUrl = baseUrl + "auth/local";
 
@@ -48,8 +48,7 @@ async function successfullLogin(username, password) {
     try {
         const response = await fetch(loginUrl, options);
         const json = await response.json();
-        //console.log(json);
-
+        s
         if (json.user) {
             saveToken(json.jwt);
             saveUser(json.user);
