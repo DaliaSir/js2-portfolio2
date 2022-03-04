@@ -33,7 +33,7 @@ body {
 }
 
 a:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   color: var(--text-color);
 }
 
@@ -59,7 +59,7 @@ a:hover {
 }
 
 .loginLink button {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 0;
   transform: rotate(-90deg);
   padding: 0 7.5px;
@@ -70,7 +70,7 @@ a:hover {
 }
 
 .loginLink button:hover {
-  background-color: rgba(229, 227, 56, 0.3);
+  background-color: rgba(229, 227, 56, 0.6);
   color: #ffffff;
 }
 
@@ -165,6 +165,12 @@ h2 {
   text-align: center;
 }
 
+/*----EDIT----*/
+
+.edit-form {
+  display: none;
+}
+
 /*----SEARCH FORM----*/
 
 .search-form {
@@ -232,7 +238,8 @@ h2 {
 
 .clearButton-container,
 .addButton-container,
-.editButton-container {
+.editButton-container,
+.deleteButton-container {
   text-align: center;
 }
 
@@ -240,7 +247,6 @@ h2 {
 .submitButton,
 .addButton,
 .editButton {
-  margin-left: 16px;
   min-width: 262px;
   margin-top: 20px;
   background-color: var(--primary-colour);
@@ -248,6 +254,16 @@ h2 {
   border: 2px solid var(--background-colour);
   border-radius: 0;
   font-weight: 600;
+  transition: background 0.4s;
+}
+
+.deleteButton {
+  min-width: 262px;
+  margin-top: 20px;
+  background-color: var(--secondary-colour);
+  color: var(--background-colour);
+  border: 2px solid var(--background-colour);
+  border-radius: 0;
   transition: background 0.4s;
 }
 
@@ -260,10 +276,17 @@ h2 {
   color: #ffffff;
 }
 
+.deleteButton:hover {
+  background: #d32203;
+  border: 2px solid var(--background-colour);
+  color: #ffffff;
+}
+
 .clearButton:active,
 .submitButton:active,
 .addButton:active,
-.editButton:active {
+.editButton:active,
+.deleteButton:active {
   position: relative;
   top: 1px;
 }
@@ -272,10 +295,6 @@ h2 {
   box-shadow: 0 0 0 0.25rem rgba(229, 227, 56, 0.25);
   background-color: transparent;
   color: #ffffff;
-}
-
-.edit-form {
-  display: none;
 }
 
 /*---------LOGIN-----------*/

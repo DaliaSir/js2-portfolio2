@@ -4,6 +4,7 @@ import { formMessageContainer } from "./components/elements.js";
 import { displayMessage } from "./utils/displayMessage.js";
 import { noTitle, noSummary, noAuthor, updatedArticle } from "./components/messages.js";
 import { getToken } from "./utils/saveUser.js";
+import deleteButton from "./utils/deleteButton.js";
 
 createLoginLink();
 
@@ -25,7 +26,7 @@ const idInput = document.querySelector("#id");
 const formMessage = document.querySelector(".form-message");
 const loader = document.querySelector(".loader");
 
-(async function () {
+(async () => {
     try {
         const response = await fetch(articleUrl);
         const json = await response.json();
@@ -34,6 +35,8 @@ const loader = document.querySelector(".loader");
         summary.value = json.summary;
         author.value = json.author;
         idInput.value = json.id;
+
+        deleteButton(json.id);
     } catch (error) {
         console.log(error);
     } finally {
