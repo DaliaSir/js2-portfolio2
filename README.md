@@ -1,4 +1,3 @@
-# js2-portfolio2
 <p>Login details:</p>
 
 ```
