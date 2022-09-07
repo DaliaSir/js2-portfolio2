@@ -1,6 +1,6 @@
 <p>Login details:</p>
 
 ```
-Username: admin@admin.com 
-Password: Pass1234
+Username: guest 
+Password: Pass123
 ```
