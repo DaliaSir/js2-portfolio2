@@ -8,13 +8,15 @@ export function renderArticles(articles) {
 
   articles.data.forEach((article) => {
     const isFavourite = favArticles.find((fav) => {
-      return parseInt(fav.id) === article.id;
+      return parseInt(fav.id) === article.attributes.id;
     });
 
+    console.log(article);
+
     const iconClass = isFavourite ? "fa" : "far";
-    const articleTitle = article.title ? article.title : "Unknown title";
-    const articleSummary = article.summary ? article.summary : "No summary";
-    const articleAuthor = article.author ? article.author : "Unknown author";
+    const articleTitle = article.attributes.title ? article.attributes.title : "Unknown title";
+    const articleSummary = article.attributes.summary ? article.attributes.summary : "No summary";
+    const articleAuthor = article.attributes.author ? article.attributes.author : "Unknown author";
 
     const { pathname } = document.location;
 
@@ -23,7 +25,7 @@ export function renderArticles(articles) {
         <div class="col p-3">
           <div class="card edit-articles-card">
             <div class="card-body article">
-              <a href="edit.html?id=${article.id}" title="Edit Article">
+              <a href="edit.html?id=${article.attributes.id}" title="Edit Article">
                 <div class="card__hover-container">
                   <p class="card__hover-container-text">Edit Article</p>
                 </div>
