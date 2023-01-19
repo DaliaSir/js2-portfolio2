@@ -1,1 +1,1 @@
-export const baseUrl = "https://js2-api.herokuapp.com/";
+export const baseUrl = "https://js2-api.up.railway.app/api/";
