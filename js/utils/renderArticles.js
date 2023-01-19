@@ -6,7 +6,7 @@ export function renderArticles(articles) {
   articlesContainer.innerHTML = "";
   const favArticles = getFromStorage("favourite-articles");
 
-  articles.forEach((article) => {
+  articles.data.forEach((article) => {
     const isFavourite = favArticles.find((fav) => {
       return parseInt(fav.id) === article.id;
     });
