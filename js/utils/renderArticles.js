@@ -8,7 +8,7 @@ export function renderArticles(articles) {
 
   articles.data.forEach((article) => {
     const isFavourite = favArticles.find((fav) => {
-      return parseInt(fav.id) === article.attributes.id;
+      return parseInt(fav.id) === article.id;
     });
 
     console.log(article);
@@ -25,7 +25,7 @@ export function renderArticles(articles) {
         <div class="col p-3">
           <div class="card edit-articles-card">
             <div class="card-body article">
-              <a href="edit.html?id=${article.attributes.id}" title="Edit Article">
+              <a href="edit.html?id=${article.id}" title="Edit Article">
                 <div class="card__hover-container">
                   <p class="card__hover-container-text">Edit Article</p>
                 </div>

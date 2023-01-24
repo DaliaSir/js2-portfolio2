@@ -12,6 +12,8 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
+console.log(id);
+
 if (!id) {
   document.location.href = "/";
 }
@@ -31,16 +33,17 @@ const loader = document.querySelector(".loader");
   try {
     const response = await fetch(articleUrl);
     const json = await response.json();
+    const data = json.data;
 
     const breadcrumbName = document.querySelector(".breadcrumb-item.active");
-    breadcrumbName.innerHTML = `${json.title}`;
+    breadcrumbName.innerHTML = `${data.attributes.title}`;
 
-    title.value = json.title;
-    summary.value = json.summary;
-    author.value = json.author;
-    idInput.value = json.id;
+    title.value = data.attributes.title;
+    summary.value = data.attributes.summary;
+    author.value = data.attributes.author;
+    idInput.value = data.id;
 
-    deleteButton(json.id);
+    deleteButton(data.id);
   } catch (error) {
     console.log(error);
   } finally {
@@ -84,7 +87,10 @@ async function editArticle(title, summary, author, id) {
   try {
     editButton.innerHTML = "Updating...";
     const response = await fetch(url, options);
+    console.log(options);
+    console.log(response);
     const json = await response.json();
+    console.log(json);
     if (json.updated_at) {
       displayMessage("success", updatedArticle, formMessageContainer);
       editButton.innerHTML = "Update";
