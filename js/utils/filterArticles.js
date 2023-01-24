@@ -6,13 +6,14 @@ import { noResults } from "../components/messages.js";
 export function filterArticles(articles) {
   search.onkeyup = (event) => {
     const searchValue = event.target.value.replace(/\s/g, "").toLowerCase();
-
-    const filteredValues = articles.filter((article) => {
-      if (article.author.replace(/\s/g, "").toLowerCase().includes(searchValue)) {
+    const data = articles.data;
+    const filteredValues = data.filter((article) => {
+      if (article.attributes.author.replace(/\s/g, "").toLowerCase().includes(searchValue)) {
         return true;
       }
     });
-    renderArticles(filteredValues);
+    const filteredArticles = { data: filteredValues }
+    renderArticles(filteredArticles);
 
     if (filteredValues.length === 0) {
       displayMessage("noResult-message", noResults, ".articles-container");

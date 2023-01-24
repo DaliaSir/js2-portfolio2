@@ -5,8 +5,9 @@ import { getFromStorage } from "./localStorage.js";
 export function renderArticles(articles) {
   articlesContainer.innerHTML = "";
   const favArticles = getFromStorage("favourite-articles");
+  const data = articles.data;
 
-  articles.data.forEach((article) => {
+  data.forEach((article) => {
     const isFavourite = favArticles.find((fav) => {
       return parseInt(fav.id) === article.id;
     });
