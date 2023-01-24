@@ -46,12 +46,14 @@ async function addArticle(title, summary, author) {
     },
   };
 
+  console.log(options);
+
   try {
     addButton.innerHTML = "Adding...";
     const response = await fetch(url, options);
     const json = await response.json();
-    const data = json.data;
-    if (data.attributes.createdAt) {
+    const data = json.data.attributes;
+    if (data.createdAt) {
       displayMessage("success", addedArticle, formMessageContainer);
       addButton.innerHTML = "Add";
       window.scrollTo(top);

@@ -11,8 +11,6 @@ export function renderArticles(articles) {
       return parseInt(fav.id) === article.id;
     });
 
-    console.log(article);
-
     const iconClass = isFavourite ? "fa" : "far";
     const articleTitle = article.attributes.title ? article.attributes.title : "Unknown title";
     const articleSummary = article.attributes.summary ? article.attributes.summary : "No summary";
