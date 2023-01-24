@@ -35,7 +35,7 @@ addForm.addEventListener("submit", e => {
 
 async function addArticle(title, summary, author) {
   const url = baseUrl + "articles";
-  const articleData = JSON.stringify({ title: title, summary: summary, author: author });
+  const articleData = JSON.stringify({ data: { title: title, summary: summary, author: author } });
   const token = getToken();
   const options = {
     method: "POST",
@@ -50,7 +50,8 @@ async function addArticle(title, summary, author) {
     addButton.innerHTML = "Adding...";
     const response = await fetch(url, options);
     const json = await response.json();
-    if (json.created_at) {
+    const data = json.data;
+    if (data.attributes.createdAt) {
       displayMessage("success", addedArticle, formMessageContainer);
       addButton.innerHTML = "Add";
       window.scrollTo(top);

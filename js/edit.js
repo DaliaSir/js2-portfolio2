@@ -74,7 +74,7 @@ editForm.addEventListener("submit", e => {
 
 async function editArticle(title, summary, author, id) {
   const url = baseUrl + "articles/" + id;
-  const articleData = JSON.stringify({ title: title, summary: summary, author: author });
+  const articleData = JSON.stringify({ data: { title: title, summary: summary, author: author } });
   const token = getToken();
   const options = {
     method: "PUT",
@@ -87,11 +87,9 @@ async function editArticle(title, summary, author, id) {
   try {
     editButton.innerHTML = "Updating...";
     const response = await fetch(url, options);
-    console.log(options);
-    console.log(response);
     const json = await response.json();
-    console.log(json);
-    if (json.updated_at) {
+    const data = json.data;
+    if (data.attributes.updatedAt) {
       displayMessage("success", updatedArticle, formMessageContainer);
       editButton.innerHTML = "Update";
       window.scrollTo(top);
