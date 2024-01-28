@@ -19,7 +19,7 @@ export function renderArticles(articles) {
 
     const { pathname } = document.location;
 
-    if (pathname === "/edit-articles.html") {
+    if (pathname.startsWith("/edit-articles")) {
       articlesContainer.innerHTML += `
         <div class="col p-3">
           <div class="card edit-articles-card">
